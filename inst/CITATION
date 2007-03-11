@@ -1,0 +1,19 @@
+citHeader("To cite luca in publications use:")
+
+citEntry(entry="Article",
+         title = "Case-Control Inference of Interaction Between Genetic and Nongenetic Risk Factors Under Assumptions on Their Distribution.",
+         author = personList(as.person("J.-H. Shin"),
+                             as.person("B. McNeney"),
+                             as.person("J. Graham")),
+         journal = "Statistical Applications in Genetics and Molecular Biology",
+         volume      = "xx",
+         year         = 2007,
+         pages       ="to appear",
+         textVersion =
+       paste("Shin J-H, McNeney B and Graham J (2007).",                 
+     "Case-Control Inference of Interaction Between Genetic and",
+     "Nongenetic Risk Factors Under Assumptions on Their Distribution.",    
+     "Statistical Applications in Genetics and Molecular Biology, to appear")
+)
+
+

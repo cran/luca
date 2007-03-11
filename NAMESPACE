@@ -1,0 +1,2 @@
+export(luca, summary.luca)
+S3method(print, summary.luca)

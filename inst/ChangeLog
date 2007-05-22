@@ -1,1 +1,11 @@
-initial version 
+version 1.0
+* luca.R: Fix bug noted by Norm Breslow: response and genotype were 
+hard-coded to have names "d" and "g" respectively. Now we use 
+whatever name the user gives us.
+
+* Description: version number ubdated; Shin's e-mail address 
+updated.
+
+* CITATION: updated.
+
+initial version

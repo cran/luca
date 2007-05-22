@@ -77,7 +77,7 @@ dispersion parameter across the levels of the genetic factor.
 To model conditional independence of a genetic factor \code{g}
 and a nongenetic attribute \code{a} given a third variable \code{a2},
 specify the dependence model \code{g ~ a2}.
-See Shin, McNeney and Graham (2006) for details.
+See Shin, McNeney and Graham (2007) for details.
 \code{luca} also allows dependence models of the form
 \code{g ~ a1 + a2 + ...} for multiple attributes \code{a1}, \code{a2}, ...
 However, there is no
@@ -119,11 +119,12 @@ The function \code{\link{summary.luca}} (or \code{summary}) can be used to obtai
  %}
 
 \author{Ji-Hyung Shin, Brad McNeney, Jinko Graham}
-\references{ Shin J-H, McNeney B, Graham J (2006).
-Likelihood inference in case-control studies of a rare disease under
-independence of genetic and continuous non-genetic covariates.
-(Submitted).
- }
+\references{ Shin J-H, McNeney B, Graham J (2007).
+Case-Control Inference of Interaction between Genetic and Nongenetic 
+Risk Factors under Assumptions on Their Distribution. 
+Statistical Applications in Genetics and Molecular Biology 6(1), 
+Article 13. Available at: http://www.bepress.com/sagmb/vol6/iss1/art13.
+}
 
 \section{warning}{Inference is not robust to misspecification
 of the covariate assumptions. There should be strong \emph{a priori} evidence

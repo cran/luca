@@ -55,10 +55,12 @@ for(l in 1:2) {
   tem.g<-dat[,gLabel] #Start w/ orig. so tem.g has all the levels/genotypes
   tem.g[1:length(tem.g)]<-g.levels[g] #overwrite w/ level/genotype of interest
 
-  ## FIX ME -- currently disease status variable name hard-coded as d
+  ## Start with disease status variable name hard-coded as d
   ## and genetic factor variable name hard-coded as g
-  ## Can probably just use names() to rename columns after tem.dat created
+  ## and then use names() to rename columns after tem.dat created
   tem.dat<-data.frame(d=tem.d,g=tem.g,attribs)
+  names(tem.dat)[1]<-dLabel
+  names(tem.dat)[2]<-gLabel
 
   pseudo.covar<-rbind( pseudo.covar,
      get.lambda(dat=tem.dat,pen.model=pen.model,gLabel=gLabel,HWP=HWP,

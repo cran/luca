@@ -6,14 +6,15 @@ citEntry(entry="Article",
                              as.person("B. McNeney"),
                              as.person("J. Graham")),
          journal = "Statistical Applications in Genetics and Molecular Biology",
-         volume      = "xx",
+         volume      = 6(1),
          year         = 2007,
-         pages       ="to appear",
+         pages       = "Article 13",
          textVersion =
        paste("Shin J-H, McNeney B and Graham J (2007).",                 
      "Case-Control Inference of Interaction Between Genetic and",
      "Nongenetic Risk Factors Under Assumptions on Their Distribution.",    
-     "Statistical Applications in Genetics and Molecular Biology, to appear")
+     "Statistical Applications in Genetics and Molecular Biology, 6(1): Article 13.",
+     "Available at: http://www.bepress.com/sagmb/vol6/iss1/art13")
 )
 
 

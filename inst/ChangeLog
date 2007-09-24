@@ -1,5 +1,9 @@
+version 1.0-2
+* Description: Title changed from "Likelihood Under Covariate Assumptions" to "Likelihood inference from case-control data under covariate 
+assumptions"
+
 version 1.0-1
-* Update the URL for the package.
+* Description: Update the URL for the package.
 
 version 1.0
 * luca.R: Fix bug noted by Norm Breslow: response and genotype were 

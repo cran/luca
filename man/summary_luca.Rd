@@ -35,11 +35,13 @@ summary.luca(fitDep) # or just summary(fitDep)
 #I(allele.count(g, "C")):a2  0.31879401 0.08236130  3.8706772 1.085334e-04
 
 }
-\references{Shin J-H, McNeney B, Graham J (2006).
-Likelihood inference in case-control studies of a rare disease under
-independence of genetic and continuous non-genetic covariates.
-(Submitted).
+\references{Shin J-H, McNeney B, Graham J (2007).
+Case-Control Inference of Interaction between Genetic and Nongenetic
+Risk Factors under Assumptions on Their Distribution.
+Statistical Applications in Genetics and Molecular Biology 6(1),
+Article 13. Available at: http://www.bepress.com/sagmb/vol6/iss1/art13.
 }
+
 \seealso{
 \code{\link{luca}}
 }

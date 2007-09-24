@@ -1,3 +1,6 @@
+version 1.0-1
+* Update the URL for the package.
+
 version 1.0
 * luca.R: Fix bug noted by Norm Breslow: response and genotype were 
 hard-coded to have names "d" and "g" respectively. Now we use 

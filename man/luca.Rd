@@ -11,10 +11,14 @@ is the standard method of inference. However, the power to detect
 statistical interaction is a concern,
 even with relatively large samples. LUCA implements
 maximum likelihood inference under
-  \item{1)}{ independence of the genetic factor and nongenetic attributes in the control population, }
-  \item{2)}{ independence of the genetic factor and nongenetic attributes, plus Hardy-Weinberg proportions (HWP) in control genotype frequencies, or}
-  \item{3)}{ simple dependence between the genetic and nongenetic covariates in the control population.}
-
+\enumerate{
+  \item independence of the genetic factor and nongenetic attributes in 
+the control population,
+  \item independence of the genetic factor and nongenetic attributes, plus 
+Hardy-Weinberg proportions (HWP) in control genotype frequencies, or
+  \item simple dependence between the genetic and nongenetic covariates in 
+the control population.
+}
 Maximum likelihood under covariate assumptions offers improved
 precision of interaction estimators compared to the standard logistic
 regression approach which makes no assumptions on the distribution
@@ -119,6 +123,7 @@ The function \code{\link{summary.luca}} (or \code{summary}) can be used to obtai
  %}
 
 \author{Ji-Hyung Shin, Brad McNeney, Jinko Graham}
+
 \references{ Shin J-H, McNeney B, Graham J (2007).
 Case-Control Inference of Interaction between Genetic and Nongenetic 
 Risk Factors under Assumptions on Their Distribution. 
@@ -126,7 +131,7 @@ Statistical Applications in Genetics and Molecular Biology 6(1),
 Article 13. Available at: http://www.bepress.com/sagmb/vol6/iss1/art13.
 }
 
-\section{warning}{Inference is not robust to misspecification
+\section{Warning}{Inference is not robust to misspecification
 of the covariate assumptions. There should be strong \emph{a priori} evidence
 to support any assumptions that are made. Alternately, \code{luca} may be used
 to screen for \dQuote{interesting} interactions that are followed up
@@ -134,6 +139,7 @@ with logistic regression using data from a larger study.
 }
 
 \seealso{ \code{\link{summary.luca}}, \code{\link{glm}}, \code{\link{coxph}}, \code{\link{clogit}} }
+
 \examples{
 data(lucaDat)
 pen.model<-formula(d~I(allele.count(g,"C"))+a+a2+I(allele.count(g,"C")):a2)
@@ -154,8 +160,6 @@ fitDep<-luca(pen.model=pen.model, gLabel="g", dat=lucaDat,
  dep.model=formula(g~a))
 fitDep$coef
 fitDep$var
- 
-  }
 }
 
 \keyword{methods}

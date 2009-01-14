@@ -1,3 +1,6 @@
+version 1.0-3
+* Fixing bugs in luca.Rd file: remove \item{} from 'description' argument
+
 version 1.0-2
 * Description: Title changed from "Likelihood Under Covariate Assumptions" to "Likelihood inference from case-control data under covariate 
 assumptions"

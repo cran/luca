@@ -1,5 +1,10 @@
+version 1.0-4
+* Removing discrepancies between some of the text descriptions and 
+example commands on g-a dependence
+ 
 version 1.0-3
 * Fixing bugs in luca.Rd file: remove \item{} from 'description' argument
+* Fixing bugs in 'CITATION' file
 
 version 1.0-2
 * Description: Title changed from "Likelihood Under Covariate Assumptions" to "Likelihood inference from case-control data under covariate 

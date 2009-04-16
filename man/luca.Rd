@@ -37,7 +37,8 @@ response, \code{g} is a genetic factor, \code{a} is a
 (possibly continuous) nongenetic factor and \code{g:a} is the interaction
 between the genetic and nongenetic factors.}
 %%When \code{a} includes all the terms in \code{a}, the model \code{d ~ g + a + g:a} is equivalent to \code{d ~ g*a}.}
-  \item{gLabel}{ a character string specifying the name of the genetic factor in \code{pen.model}. }
+  \item{gLabel}{ a character string specifying the name of the genetic factor in \code{
+pen.model}. }
   \item{dat}{ a data frame containing the variables in \code{pen.model},
 currently, with \emph{no} default value. Each row of \code{dat} is
 considered as one multivariate observation for a subject.  Note that the
@@ -70,23 +71,21 @@ factor and disease status but common value of the nongenetic attribute.
 The function \code{\link[survival]{coxph.fit}} from the \code{survival}
 package is used to fit the conditional logistic regression.
 
-A dependence model such as \code{g ~ a} specifies a polychotomous
-regression model for \code{g} as a function of \code{a}.
-Typically \code{a} is also a term in the penetrance model.
-The polychotomous regression for the genetic factor
-\code{g} given the attribute \code{a} holds
-when the conditional distribution of \code{a} given \code{g}
-is from the exponential family of distributions, with a constant
-dispersion parameter across the levels of the genetic factor.
-To model conditional independence of a genetic factor \code{g}
-and a nongenetic attribute \code{a} given a third variable \code{a2},
-specify the dependence model \code{g ~ a2}.
-See Shin, McNeney and Graham (2007) for details.
-\code{luca} also allows dependence models of the form
-\code{g ~ a1 + a2 + ...} for multiple attributes \code{a1}, \code{a2}, ...
-However, there is no
-formal justification for the use of such a model to capture
-the dependence between \code{g} and multiple nongenetic attributes.
+A dependence model such as \code{g ~ a} specifies a polychotomous 
+regression model for the genetic factor \code{g} as a function of the  
+nongenetic attribute \code{a}. The polychotomous regression for \code{g} 
+given \code{a} holds when the conditional distribution of \code{a} given 
+\code{g} is from the exponential family of distributions, with a constant
+dispersion parameter across the levels of the genetic factor.  
+Alternately, \code{g} and \code{a} may be conditionally independent 
+given a third variable \code{a2}. Typically, \code{a2} is also a term in 
+the penetrance model (\code{pen.model}). To model conditional independence 
+of \code{g} and \code{a} given \code{a2}, specify the dependence model 
+(\code{dep.model}) as \code{g ~ a2}. See Shin, McNeney and Graham (2007) 
+for details.  \code{luca} also allows dependence models of the form 
+\code{g ~ a1 + a2 + ...} for multiple attributes \code{a1}, \code{a2}, ... 
+However, there is no formal justification for the use of such a model to capture the 
+dependence between \code{g} and multiple nongenetic attributes.
 }
 
 %The disease response is typically a vector with two values (e.g., 0 or 1). The higher numeric value, higher factor level or longer character string denotes a case (i.e., affected) by default.  The function \code{\link{I}}() can be used to specify which value represents the case. For example, \code{I(d == case.value)} can replace \code{d} in \code{pen.model}, \code{d ~ g + a + g:a}.  
@@ -142,7 +141,8 @@ with logistic regression using data from a larger study.
 
 \examples{
 data(lucaDat)
-pen.model<-formula(d~I(allele.count(g,"C"))+a+a2+I(allele.count(g,"C")):a2)
+# typical penetrance model:
+pen.model<-formula(d~I(allele.count(g,"C"))+a+a2+I(allele.count(g,"C")):a)
 
 #1. Assuming independence and HWP	
 fitHWP<-luca(pen.model=pen.model, gLabel="g", dat=lucaDat, HWP=TRUE)
@@ -155,11 +155,19 @@ fitDefault<-luca(pen.model=pen.model, gLabel="g", dat=lucaDat)
 fitDefault$coef
 fitDefault$var
 
-#3. Allowing for dependence
-fitDep<-luca(pen.model=pen.model, gLabel="g", dat=lucaDat, 
+#3. Allowing for dependence between genetic and nongenetic factors
+
+# General dependence model
+fitDep1<-luca(pen.model=pen.model, gLabel="g", dat=lucaDat, 
  dep.model=formula(g~a))
-fitDep$coef
-fitDep$var
+fitDep1$coef
+fitDep1$var
+
+# When 'g' and 'a' are conditioanally independent given the third variable 'a2':
+fitDep2<-luca(pen.model=pen.model, gLabel="g", dat=lucaDat,
+ dep.model=formula(g~a2))
+fitDep2$coef
+fitDep2$var
 }
 
 \keyword{methods}

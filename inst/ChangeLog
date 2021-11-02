@@ -1,3 +1,7 @@
+version 1.0-6
+* Description: Update the Email address for JS, and the URL, title and description of the package. (October 29, 2021)
+* NAMESPACE: Address "S3 generic/method consistency" NOTES (October 29, 2021)
+
 version 1.0-5
 * CITATION file has been modified according to the e-mail request from R 
 (May 5, 2009).

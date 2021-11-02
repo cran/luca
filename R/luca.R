@@ -19,8 +19,6 @@
 
 "luca" <-
 function(pen.model, gLabel, dat, HWP = FALSE, dep.model = NULL) {
-require(survival)
-require(genetics)
 
 call<-match.call() #so we can report the call to users
 
